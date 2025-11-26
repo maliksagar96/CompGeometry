@@ -1,0 +1,1 @@
+/usr/bin/c++ CMakeFiles/line_tri.dir/src/main.cpp.o -o line_tri 

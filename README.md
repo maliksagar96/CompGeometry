@@ -1,6 +1,6 @@
 ## 🧩 Some Computational Geometry Problems
 
-### **Problem 1 — Convex Hull**
+<details> <summary><strong>Problem 1 — Convex Hull</strong></summary> <br>
 
 Imagine a bunch of nails randomly hammered into a wooden board. Now stretch a rubber band, loop it around all the nails, and let go.
 It snaps into place around the **outermost nails** — forming a neat, tight boundary.

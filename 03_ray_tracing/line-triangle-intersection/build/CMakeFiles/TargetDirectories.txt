@@ -1,0 +1,3 @@
+/home/sagarmalik/Documents/git/compgeo/line-triangle-intersection/build/CMakeFiles/line_tri.dir
+/home/sagarmalik/Documents/git/compgeo/line-triangle-intersection/build/CMakeFiles/edit_cache.dir
+/home/sagarmalik/Documents/git/compgeo/line-triangle-intersection/build/CMakeFiles/rebuild_cache.dir
