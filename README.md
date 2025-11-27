@@ -1,6 +1,8 @@
 ## 🧩 Some Computational Geometry Problems
 
-<details> <summary><strong>Problem 1 — Convex Hull</strong></summary> <br>
+## 🟦 Problem 1 — Convex Hull
+
+<details><summary><strong>Wrapping a rubber band around your data 📦✨</strong></summary><br>
 
 Imagine a bunch of nails randomly hammered into a wooden board. Now stretch a rubber band, loop it around all the nails, and let go.
 It snaps into place around the **outermost nails** — forming a neat, tight boundary.
@@ -62,7 +64,9 @@ vector<Point> inputPoints = {
 ```
 </details>
 
-<details><summary><strong>Problem 3 — Ray Tracing</strong></summary><br>
+## 🔦 Problem 3 — Ray Tracing
+
+<details><summary><strong>Teaching light how to behave 🌈💡</strong></summary><br>
 
 Ever wondered how your GPU figures out whether a ray of light hits a triangle in a 3D scene?
 
@@ -132,6 +136,7 @@ The full implementation lives in the folder:
 Dive in and play with it — it’s one of the most satisfying algorithms in computational geometry!
 
 </details>
+
 
 ## 🧲 Problem 4 — Closest Pair of Points
 
