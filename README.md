@@ -60,4 +60,75 @@ vector<Point> inputPoints = {
   {3, 1}
 };
 ```
+</details>
 
+<details><summary><strong>Problem 3 — Ray Tracing</strong></summary><br>
+
+Ever wondered how your GPU figures out whether a ray of light hits a triangle in a 3D scene?
+
+It’s basically asking:
+
+**“If I shoot a laser from point A in direction B… does it smack into this triangle?”**
+
+Turns out—yes, there’s math for that 😄
+Enter one of the coolest little formulas in computer graphics…
+
+---
+
+## 🎯 Ray–Triangle Intersection (a.k.a. “Did we hit it?”)
+
+A ray in 3D is just:
+
+**L(t) = p₀ + t·v₀**
+→ starting point + direction × constant
+
+A triangle can be described as:
+
+**T(u, v) = A + u(B − A) + v(C − A)**
+with the rules:
+`u ≥ 0`,
+`v ≥ 0`,
+`u + v ≤ 1`
+(meaning the point lies inside the triangle).
+
+To find the intersection, we simply set **L = T** and solve for *(t, u, v)*.
+
+Simple?
+Yes.
+Fast?
+…not quite.
+
+---
+
+## ⚡ The Möller–Trumbore Magic
+
+In their legendary paper
+**“Fast, Minimum Storage Ray–Triangle Intersection”**
+Tomas Möller and Ben Trumbore took the slow algebraic mess and turned it into a **blazingly fast**, branch-friendly algorithm.
+
+How?
+By cleverly rearranging Cramer's rule and using cross/dot products like ninjas 🥷✨
+
+### 🧠 The Algorithm in Super-Brief:
+
+1. Compute triangle edges:
+   `e1 = B − A`
+   `e2 = C − A`
+2. Use a cross product to detect if the ray is **parallel** (early reject).
+3. Solve for barycentric coordinates **u** and **v**.
+4. Check if the point is inside the triangle (`u ≥ 0`, `v ≥ 0`, `u + v ≤ 1`).
+5. Solve for **t** → gives you the intersection point on the ray.
+
+Fast, clean, and still used everywhere in real-time graphics today.
+A true classic.
+
+---
+
+## 📂 Relevant Code
+
+The full implementation lives in the folder:
+**`03_ray_tracing`**
+
+Dive in and play with it — it’s one of the most satisfying algorithms in computational geometry!
+
+</details>

@@ -15,6 +15,8 @@
 
 using namespace std;
 
+
+//To check the intersection of a line(ray) and a triangle.
 bool rayIntersectsTriangle(const Point &p0, const Vector &v0,
                            const Point &A, const Point &B, const Point &C)
 {

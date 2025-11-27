@@ -1,0 +1,3 @@
+/home/sagarmalik/Documents/git/CompGeometry/03_ray_tracing/02_point_inside_stl/build/CMakeFiles/line_tri.dir
+/home/sagarmalik/Documents/git/CompGeometry/03_ray_tracing/02_point_inside_stl/build/CMakeFiles/edit_cache.dir
+/home/sagarmalik/Documents/git/CompGeometry/03_ray_tracing/02_point_inside_stl/build/CMakeFiles/rebuild_cache.dir
