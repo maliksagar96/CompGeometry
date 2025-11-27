@@ -132,3 +132,110 @@ The full implementation lives in the folder:
 Dive in and play with it — it’s one of the most satisfying algorithms in computational geometry!
 
 </details>
+
+## 🧲 Problem 4 — Closest Pair of Points
+
+<details><summary><strong>Who’s the closest pair in the room?</strong></summary><br>
+
+Imagine you’re hosting a big party 🎉
+There are *n* people scattered all across the room (each with coordinates x, y, z — fancy 3D party!).
+
+Your job?
+
+👉 **Find the two people standing closest to each other.**
+No cheating. No “just eyeballing it.”
+We need the actual minimum Euclidean distance.
+
+Sounds simple, right?
+
+Well…
+
+---
+
+## 🪓 Brute Force? More like Brutal Force
+
+The simplest (and dumbest) plan:
+
+1. Take every person.
+2. Compare them with every other person.
+3. Compute all distances.
+4. Cry when `n = 10,000` because this is **O(n²)**.
+
+This is like saying:
+
+> “Let me ask every pair of people if they’re best friends.”
+
+Fun for small parties.
+Disaster for concerts. 😭
+
+---
+
+## ⚡ Divide and Conquer to the Rescue 🚀
+
+Instead of checking everything, let’s use some **algorithmic Jedi magic**.
+
+### Step 1 — Sort by X
+
+Line everyone up from left to right.
+No chaos. No elbows.
+
+### Step 2 — Split the room
+
+Cut the room into two halves.
+
+Left side 👈
+Right side 👉
+
+And recursively find:
+
+* Closest pair on the left
+* Closest pair on the right
+
+Pick the better one.
+
+So far so good. But wait…
+
+---
+
+## 🧠 The Sneaky Part — The Strip Trick
+
+This is where the beauty kicks in 😍
+
+The true closest pair
+**might be standing at the border between left and right!**
+
+So we:
+
+1. Build a vertical **strip** around the dividing line.
+2. Only include people whose x-coordinate is within `d` of the middle
+   (where `d` is the best distance we’ve found so far).
+3. Now check distances *only* inside the strip.
+
+Why does this work?
+
+Because geometry says:
+
+> “If two points are closer than d, they must live in that narrow strip.”
+
+So instead of checking thousands, you're checking a tiny handful.
+
+Result?
+
+A glorious **O(n log n)** algorithm 🎉✨
+
+---
+
+## 🧾 Final Takeaway
+
+Closest pair of points isn’t just a problem.
+It’s a *story* about:
+
+* Splitting the world
+* Checking fewer things
+* Letting geometry do the heavy lifting
+* And respecting personal space 😄
+
+Efficient, elegant, and surprisingly fun.
+
+</details>
+

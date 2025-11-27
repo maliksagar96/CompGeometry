@@ -1,0 +1,1 @@
+/usr/bin/c++ CMakeFiles/min_dist.dir/src/main.cpp.o -o min_dist
