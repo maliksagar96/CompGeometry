@@ -1,7 +1,0 @@
-{
-	"InstallScripts" : 
-	[
-		"/mnt/c/github/CompGeometry/04_nearest_point/build/cmake_install.cmake"
-	],
-	"Parallel" : false
-}
