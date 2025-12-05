@@ -69,7 +69,7 @@ struct Vector {
 };
 
 double cross(const Vector &A, const Vector &B) {
-  return A.x * B.y - A.y * B.x;  // scalar 2D cross
+  return A.x * B.y - A.y * B.x;  // considering magnitude only.
 }
 
 bool intersect(const Segment &s1, const Segment &s2, Point &I) {
@@ -79,7 +79,7 @@ bool intersect(const Segment &s1, const Segment &s2, Point &I) {
   Vector qp(s1.p, s2.p);
 
   double denom = cross(r, s);
-  if (denom == 0) return false; // parallel, but you said no edge cases
+  if (denom == 0) return false; 
 
   double t = cross(qp, s) / denom;
   double u = cross(qp, r) / denom;
