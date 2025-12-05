@@ -64,6 +64,114 @@ vector<Point> inputPoints = {
 ```
 </details>
 
+## ✂️ Problem 2 — Line Segment Intersections
+
+<details><summary><strong>Who’s bumping into whom?</strong></summary><br>
+
+Imagine a bunch of laser beams ✨ shooting across a 2D plane.
+Some cross, some don’t, and some are just minding their own business.
+
+Your mission?
+
+👉 **Find every pair of line segments that intersect.**
+
+No guessing.
+No drawing messy diagrams.
+Just pure computational geometry magic.
+
+---
+
+## 🪓 Brute Force — When Geometry Gets Violent
+
+The most obvious (and most painful) approach:
+
+1. Take every line segment.
+2. Check it against every other segment.
+3. Cry.
+
+Why?
+Because this becomes **O(n²)** checks.
+
+It’s like saying:
+
+> “Let me check if every road in the city crosses every other road.”
+
+Works for small towns 🌆
+Horrible for big cities 🏙️😢
+
+---
+
+## ⚡ Enter the Sweep Line — The Algorithmic Traffic Cop 🚦
+
+Instead of comparing everything with everything, we do something smarter.
+
+We sweep a **vertical line** across the plane from left to right.
+
+As the sweep moves:
+
+* Segments “enter” the active set when their left endpoint appears.
+* Segments “leave” the active set when their right endpoint appears.
+* Only **neighbors** can intersect (because if two segments don’t touch when they’re side-by-side, they’ll never magically cross later).
+
+This is the key intuition:
+
+> “A segment only needs to check intersection with the ones directly above and below it.”
+
+Suddenly…
+
+Instead of checking *everyone*,
+you’re only checking *local neighbors*.
+
+---
+
+## 🧠 Why This Works — Geometry to the Rescue
+
+Two line segments intersect **only** when:
+
+* They are both active at the same time, **and**
+* They are neighbors in the vertical ordering of active segments.
+
+So the algorithm maintains a balanced tree (`std::set` in C++).
+
+This tree:
+
+* Keeps segments sorted by their height at the current sweep position.
+* Lets us get the **previous** and **next** neighbors in *log n* time.
+* Automatically rearranges itself (thanks to red–black tree properties).
+
+Every insertion or deletion = **O(log n)**
+Every intersection found = **O(log n)**
+
+---
+
+## ⏱️ Final Time Complexity
+
+We get:
+
+* **O(n log n)** for sorting all event points
+* **O(k log n)** for handling the *k* intersections we actually find
+
+So the final sweep-line complexity:
+
+> **O((n + k) log n)**
+> Lightning fast ⚡ compared to brute force.
+
+---
+
+## 🧾 Final Takeaway
+
+The line segment intersection problem is a beautiful blend of:
+
+* Geometry
+* Balanced BST magic
+* Event-driven thinking
+* And the joy of sweeping away unnecessary checks 😄
+
+It transforms a messy geometric problem into an elegant, efficient algorithm — and that’s why computational geometry feels like wizardry.
+
+</details>
+
+
 ## 🔦 Problem 3 — Ray Tracing
 
 <details><summary><strong>Teaching light how to behave 🌈💡</strong></summary><br>

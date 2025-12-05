@@ -3,6 +3,32 @@
   To check if the line segments intersect or not we can implement the logic the points R and S shoudl lie on the different sides of the line PQ and 
   the points PQ should lie on the different sides of the line RS.
   This could be checked by cross products. There is another method to check the intersections.
+
+  Then there is the second method which is doing the same thing as the first method but is less visible the way it is written. That's why I have written both the methods for clarity. 
+*/
+
+/*
+
+This was such an amazing problem from the domain of computational geometry. It was genuinely enjoyable to solve, and there was a lot to learn along the way.
+
+First, the time complexity.
+We are given several line segments and must determine which ones intersect.
+The brute-force approach, which I demonstrated in the first file, checks every pair of segments. This leads to a time complexity of roughly n², since every segment is tested against every other one.
+
+The sweep-line algorithm is far more efficient. Its overall time complexity is composed of two parts:
+• sorting all events, which takes n log n, and
+• handling each intersection, which takes k log n, where k is the number of intersections found.
+
+The k log n term appears because every time an intersection is detected, the algorithm updates a balanced tree (in C++, this is implemented using std::set). Each insertion, deletion, or lookup in this tree costs log n, so k such operations give k log n.
+
+One of the nicest discoveries in this problem was how useful a set is. A set in C++ is actually a balanced binary search tree that automatically rearranges itself to stay efficient. This property makes it perfect for maintaining the active list of segments during a sweep.
+
+Another pleasant surprise was learning that even custom structs can be stored in a set. By defining how two structs should be compared, the set can order and manage them just like built-in types. Hash maps and hash sets can also support structs with a bit more setup—something to explore later.
+
+Overall, although this problem leans strongly toward mathematics, turning that mathematical idea into an optimal computational solution takes both understanding and programming skill. C++ really shines in problems like these, and solving them shows just how powerful the language can be.
+
+Computational geometry is awesome!
+
 */
 
 #include <iostream>
